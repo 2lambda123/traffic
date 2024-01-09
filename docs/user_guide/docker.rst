@@ -17,7 +17,7 @@ installed and running, then pull the image with:
 
 .. code:: bash
 
-    docker pull ghcr.io/xoolive/traffic/jupyter:latest
+    docker pull ghcr.io/xoolive/traffic/jupyter:main
 
 Once the image is downloaded, you can run it with
 
