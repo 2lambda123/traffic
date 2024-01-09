@@ -9,7 +9,7 @@ have a few options. We provide a self-contained container image on GitHub that
 you can use. It has everything in it that you need. Or, alternatively, you can
 build your own image. We describe both below.
 
-Use the GitHub container image
+Use the self-contained container image provided by GitHub
 ------------------------------
 
 Using the container image from GitHub is simple. Just make sure you have Docker
@@ -17,7 +17,7 @@ installed and running, then pull the image with:
 
 .. code:: bash
 
-    docker pull ghcr.io/xoolive/traffic/jupyter:latest
+    docker pull ghcr.io/xoolive/traffic/jupyter:latest -p 8888:8888
 
 Once the image is downloaded, you can run it with
 
@@ -25,9 +25,7 @@ Once the image is downloaded, you can run it with
 
     docker run -it -p 8888:8888 ghcr.io/xoolive/traffic/jupyter
 
-This will start the container, and you can connect to it with the browser and
-work in a Jupyter notebook. Just copy-paste the URL that starts with
-*http://127.0.0.1:8888...* into your favourite browser and have fun.
+This will start the container with port 8888 of the container being mapped to port 8888 of the host machine. You can connect to it with the browser and work in a Jupyter notebook. Just copy-paste the URL that starts with *http://127.0.0.1:8888...* into your favorite browser and have fun.
 
 Use the GitHub container image with Visual Studio Code
 ------------------------------------------------------
