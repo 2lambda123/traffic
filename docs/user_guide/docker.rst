@@ -102,9 +102,9 @@ The ``Dockerfile`` could look like the following:
 
 .. code:: dockerfile
 
-    FROM jupyter/minimal-notebook
+    FROM conda/minimal-notebook:4.10
 
-    # copy conda environment file to image
+    COPY environment.yml environment.yml
     COPY traffic.yml traffic.yml
 
     # install nb_conda into the base python to allow the user to choose the
