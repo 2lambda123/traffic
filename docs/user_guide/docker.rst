@@ -105,16 +105,16 @@ The ``Dockerfile`` could look like the following:
 
 .. code:: dockerfile
 
-    FROM jupyter/minimal-notebook
+    FROM jupyter/datascience-notebook
 
     # copy conda environment file to image
-    COPY traffic.yml traffic.yml
-
+    COPY environment.yml environment.yml
+    
     # install nb_conda into the base python to allow the user to choose the
     # environment in the jupyter notebook and install environment
     USER jovyan
     RUN mamba install -y nb_conda
-    RUN mamba env create -f traffic.yml
+    RUN mamba env update -n base -f environment.yml
 
 Note that the environment file ``traffic.yml`` has to be in the same directory
 as the ``Dockerfile``: a sample version is provided in the ``docker`` folder.
