@@ -88,8 +88,7 @@ the same exact versions of all dependency libraries.
 The following steps **are not mandatory**, but they will ensure a swift
 reviewing process:
 
-- install `poetry <https://python-poetry.org/>`_ on your workstation
-- install traffic with poetry:
+Install poetry and traffic using poetry:
 
   .. code:: bash
 
