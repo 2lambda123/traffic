@@ -61,7 +61,15 @@ Updating traffic
 
   .. code:: bash
 
+      For the most recent development version, install from the GitHub repository:
+  .. code:: bash
+
       git clone --depth 1 https://github.com/xoolive/traffic
+      cd traffic/
+      pip install .
+
+  .. note::
+      It is recommended to install the development version inside the 'traffic_env' conda environment where you have installed the latest release.
       cd traffic/
       pip install .
 
