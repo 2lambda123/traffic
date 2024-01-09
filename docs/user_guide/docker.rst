@@ -39,7 +39,7 @@ For example, you have some code that you'd like to run in the container. You
 can pull the image from GitHub as above. Once that is done, open the *Docker*
 extension and right-click on the image and select *Run Interactive*.
 
-.. image:: images/user_docker_vscode.png
+.. image:: images/user_docker_vscode_updated.png
 
 This will show give you the URL that you can use on the console similar to the
 example above. The much cooler thing is, if you have the container running (as
@@ -47,7 +47,7 @@ you now do if you followed the instructions) you can change VS Code to be
 running as if it was *in* the container. For that, you can right-click on the
 container and select *Attach Visual Studio Code*.
 
-.. image:: images/vscode_attach_to_container.png
+.. image:: images/vscode_attach_to_container_updated.png
 
 A new instance will be started, and you can use all the features of VS Code
 (including Jupyter notebooks) the same way you used to.
