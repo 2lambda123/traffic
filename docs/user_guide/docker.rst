@@ -27,15 +27,15 @@ Once the image is downloaded, you can run it with
 
 This will start the container with port 8888 of the container being mapped to port 8888 of the host machine. You can connect to it with the browser and work in a Jupyter notebook. Just copy-paste the URL that starts with *http://127.0.0.1:8888...* into your favorite browser and have fun.
 
-Use the GitHub container image with Visual Studio Code
+Use the self-contained container image provided by GitHub with Visual Studio Code.
 ------------------------------------------------------
 
-If you use VS Code, life is even more convenient. You just need to make sure
+Using Visual Studio Code (VS Code) makes the process even more convenient. You just need to make sure
 that you have the *Docker* and *Remote - Containers* extensions installed.
 
-For example, you have some code that you'd like to run in the container. You
-can pull the image from GitHub as above. Once that is done, open the *Docker*
-extension and right-click on the image and select *Run Interactive*.
+If you have some code that you'd like to run in the container, follow these instructions:
+1. Pull the image from GitHub as above.
+2. Open the *Extensions* view in VS Code by clicking on the Extensions icon in the Activity Bar on the side of the window.
 
 .. image:: images/user_docker_vscode.png
 
@@ -47,8 +47,7 @@ container and select *Attach Visual Studio Code*.
 
 .. image:: images/vscode_attach_to_container.png
 
-A new instance will be started, and you can use all the features of VS Code
-(including Jupyter notebooks) the same way you used to.
+This will start a new instance of VS Code running within the container, allowing you to use all the features of VS Code, including Jupyter notebooks.
 
 Create your own Dockerfile
 --------------------------
