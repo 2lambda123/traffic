@@ -67,8 +67,7 @@ Updating traffic
 
   .. note::
 
-      It should be easier to install the development version inside your conda
-      environment where you installed the latest release.
+      It is recommended to install the development version inside the 'traffic_env' conda environment where you have installed the latest release.
 
 
 Contribute to traffic
