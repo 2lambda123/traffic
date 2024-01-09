@@ -73,7 +73,7 @@ like the following:
     USER jovyan
     RUN mamba install -c conda-forge traffic
 
-    # manually set environment variable for PROJ when running in base environment
+    # Set the environment variable for PROJ to avoid issues with the conda base environment
     ENV PROJ_LIB=/opt/conda/share/proj
 
 Note the last line, which sets an environment variable for PROJ. This is needed
