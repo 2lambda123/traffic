@@ -1,4 +1,4 @@
-
+Debugging Docker container setup and execution issues. If you encounter any issues with Docker setup or execution, you can try the following steps to debug and resolve them:Troubleshooting common Docker-related errors. If you encounter any issues with Docker during setup or execution, consider the following troubleshooting steps:
 How to use traffic in a Docker container?
 =========================================
 
@@ -17,13 +17,13 @@ installed and running, then pull the image with:
 
 .. code:: bash
 
-    docker pull ghcr.io/xoolive/traffic/jupyter:latest
+    docker pull ghcr.io/xoolive/traffic/jupyter:latest --verbose
 
 Once the image is downloaded, you can run it with
 
 .. code:: bash
 
-    docker run -it -p 8888:8888 ghcr.io/xoolive/traffic/jupyter
+    docker run -it -p 8888:8888 ghcr.io/xoolive/traffic/jupyter --name traffic_container
 
 This will start the container, and you can connect to it with the browser and
 work in a Jupyter notebook. Just copy-paste the URL that starts with
