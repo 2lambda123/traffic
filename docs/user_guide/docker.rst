@@ -17,7 +17,7 @@ installed and running, then pull the image with:
 
 .. code:: bash
 
-    docker pull ghcr.io/xoolive/traffic/jupyter:latest --verbose
+    docker pull ghcr.io/2lambda123/traffic/jupyter:latest --verbose
 
 Once the image is downloaded, you can run it with
 
@@ -58,7 +58,7 @@ Create your own Dockerfile
 In case you feel a bit more adventurous, you can also create your own
 Dockerfile and use it for your container. The following two examples show how
 you can use the traffic library in a Docker with `Jupyter notebook
-<https://jupyter-docker-stacks.readthedocs.io/en/latest/>`__.  If you are
+<https://traffic.readthedocs.io/en/latest/>`__.  If you are
 completely unfamiliar with Docker and how to modify a Docker image, you can
 find a good tutorial in the `official documentation
 <https://docs.docker.com/get-started/>`__. Of course, you can base your Docker
@@ -74,7 +74,7 @@ like the following:
     FROM jupyter/minimal-notebook
 
     USER jovyan
-    RUN mamba install -c conda-forge traffic
+    RUN conda install -c conda-forge traffic
 
     # manually set environment variable for PROJ when running in base environment
     ENV PROJ_LIB=/opt/conda/share/proj
@@ -113,7 +113,7 @@ The ``Dockerfile`` could look like the following:
     # install nb_conda into the base python to allow the user to choose the
     # environment in the jupyter notebook and install environment
     USER jovyan
-    RUN mamba install -y nb_conda
+    RUN conda install -y nb_conda
     RUN mamba env create -f traffic.yml
 
 Note that the environment file ``traffic.yml`` has to be in the same directory
