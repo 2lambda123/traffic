@@ -18,6 +18,11 @@ Jupyter Lab are accessible thanks to the `altair
 <http://ipyleaflet.readthedocs.io/>`_ libraries; other exports to various
 formats (including CesiumJS or Google Earth) are also available.
 
+If you want to use traffic in a Docker container, you have a few options. You can use the self-contained container image provided on GitHub, or you can build your own image. We describe both options below.
+<https://altair-viz.github.io/>`_ and `ipyleaflet
+<http://ipyleaflet.readthedocs.io/>`_ libraries; other exports to various
+formats (including CesiumJS or Google Earth) are also available.
+
 Latest release
 --------------
 
