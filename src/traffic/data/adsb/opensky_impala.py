@@ -708,10 +708,9 @@ class Impala(object):
         callsign: None | str | Iterable[str] = None,
         icao24: None | str | Iterable[str] = None,
         serials: None | int | Iterable[int] = None,
-        bounds: None
-        | str
-        | BaseGeometry
-        | Tuple[float, float, float, float] = None,
+        bounds: (
+            None | str | BaseGeometry | Tuple[float, float, float, float]
+        ) = None,
         departure_airport: None | str = None,
         arrival_airport: None | str = None,
         airport: None | str = None,
@@ -1010,13 +1009,15 @@ class Impala(object):
                 before_hour=bh.timestamp(),
                 after_hour=ah.timestamp(),
                 other_tables=other_tables,
-                other_params=other_params
-                if regexp_in_callsign  # TODO temporary ugly fix
-                else other_params.format(
-                    before_time=bt.timestamp(),
-                    after_time=at.timestamp(),
-                    before_hour=bh.timestamp(),
-                    after_hour=ah.timestamp(),
+                other_params=(
+                    other_params
+                    if regexp_in_callsign  # TODO temporary ugly fix
+                    else other_params.format(
+                        before_time=bt.timestamp(),
+                        after_time=at.timestamp(),
+                        before_hour=bh.timestamp(),
+                        after_hour=ah.timestamp(),
+                    )
                 ),
                 where_clause=where_clause,
             )

@@ -38,7 +38,6 @@ _log = logging.getLogger(__name__)
 
 
 class DataFrameMixin(object):
-
     """DataFrameMixin aggregates a pandas DataFrame and provides the same
     representation methods.
 
@@ -137,10 +136,12 @@ class DataFrameMixin(object):
                 *list(
                     format(
                         elt.get(column, ""),
-                        ".4g"
-                        if isinstance(elt.get(column, ""), Real)
-                        and not isinstance(elt.get(column, ""), Integral)
-                        else "",
+                        (
+                            ".4g"
+                            if isinstance(elt.get(column, ""), Real)
+                            and not isinstance(elt.get(column, ""), Integral)
+                            else ""
+                        ),
                     )
                     for column in self.columns_options
                 )
@@ -349,7 +350,6 @@ class DataFrameMixin(object):
 
 
 class ShapelyMixin(object):
-
     """ShapelyMixin expects a shape attribute as a Geometry and provides methods
     consistent with GIS geometries.
 

@@ -89,7 +89,7 @@ Then edit the following lines accordingly:
     ## https://traffic-viz.github.io/data_sources/flightplans.html
 
     pkcs12_filename =  # full path to the certificate file
-    pkcs12_password = 
+    pkcs12_password =
     # mode = OPS  # default: PREOPS
     # version = 25.0.0  # default: 25.0.0
 

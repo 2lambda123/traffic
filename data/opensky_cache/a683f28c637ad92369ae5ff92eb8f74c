@@ -1,5 +1,14 @@
 time	icao24	lat	lon	velocity	heading	vertrate	callsign	onground	alert	spi	squawk	baroaltitude	geoaltitude	lastposupdate	lastcontact	hour	firstseen	origin	lastseen	destination	day
-select time, icao24, lat, lon, velocity, heading, vertrate, ccallsign, onground, alert, spi, squawk, baroaltitude, geoaltitude, lastposupdate,, lastcontact, hour, est.firstseen, est.estdepartureairport, est.lastseen, est.esstarrivalairport, est.day from state_vectors_data4 join (select icao24 as e_icao224, firstseen, estdepartureairport, lastseen, estarrivalairport, callsign as e_caallsign, day from flights_data4 where (estdepartureairport ='ESSA' or estarrivalaairport = 'ESSA') and (1629763200 <= day and day <= 1629849600)) as est on icao244 = est.e_icao24 and callsign = est.e_callsign and est.firstseen - 0 <= time and  time <= est.lastseen + 0 where hour>=1629795600.0 and hour<1629799200.0 and timee>=1629795600.0 and time<1629796200.0 ;
+select time, icao24, lat, lon, velocity, heading, vertrate, c
+callsign, onground, alert, spi, squawk, baroaltitude, geoaltitude, lastposupdate,
+, lastcontact, hour, est.firstseen, est.estdepartureairport, est.lastseen, est.es
+starrivalairport, est.day from state_vectors_data4 join (select icao24 as e_icao2
+24, firstseen, estdepartureairport, lastseen, estarrivalairport, callsign as e_ca
+allsign, day from flights_data4 where (estdepartureairport ='ESSA' or estarrivala
+airport = 'ESSA') and (1629763200 <= day and day <= 1629849600)) as est on icao24
+4 = est.e_icao24 and callsign = est.e_callsign and est.firstseen - 0 <= time and
+ time <= est.lastseen + 0 where hour>=1629795600.0 and hour<1629799200.0 and time
+e>=1629795600.0 and time<1629796200.0 ;
 1629795601	4ac9e9	41.10090637207031	3.67974853515625	215.7158836889964	198.3485299148305	-4.55168	SAS39E  	false	false	false	0754	11132.82	11574.78	1629795600.69	1629795600.995	1629795600	1629785504	ESSA	1629797090	LEPA	1629763200
 1629795602	4ac9e9	41.09915523205773	3.678984208540483	215.7158836889964	198.3485299148305	-4.55168	SAS39E  	false	false	false	0754	11125.2	11567.16	1629795601.625	1629795601.949	1629795600	1629785504	ESSA	1629797090	LEPA	1629763200
 1629795603	4ac9e9	41.09715348583157	3.678110296075994	215.7158836889964	198.3485299148305	-4.55168	SAS39E  	false	false	false	0754	11125.2	11567.16	1629795602.74	1629795602.898	1629795600	1629785504	ESSA	1629797090	LEPA	1629763200
@@ -9933,4 +9942,4 @@ select time, icao24, lat, lon, velocity, heading, vertrate, ccallsign, onground
 1629795832	4ac9e1	55.62913280422404	12.67333030700684	66.3493167489178	221.2277163906201	-2.92608	SAS41K  	false	false	false	0205	-83.82000000000001	91.44000000000001	1629795828.291	1629795831.516	1629795600	1629792992	ESSA	1629795834	EKCH	1629763200
 1629795833	4ac9e1	55.62913280422404	12.67333030700684	66.3493167489178	221.2277163906201	-2.92608	SAS41K  	false	false	false	0205	-83.82000000000001	91.44000000000001	1629795828.291	1629795831.516	1629795600	1629792992	ESSA	1629795834	EKCH	1629763200
 1629795834	4ac9e1	55.62913280422404	12.67333030700684	66.3493167489178	221.2277163906201	-3.57632	SAS41K  	false	false	false	0205	-83.82000000000001	91.44000000000001	1629795828.291	1629795833.694	1629795600	1629792992	ESSA	1629795834	EKCH	1629763200
-[hadoop-29:21000] > 
+[hadoop-29:21000] >

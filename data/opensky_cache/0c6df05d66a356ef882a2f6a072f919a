@@ -1,5 +1,8 @@
 mintime	maxtime	rawmsg	msgcount	icao24	hour
-select mintime, maxtime, rawmsg, msgcount, icao24, hour from vvelocity_data4  where hour>=1527692400.0 and hour<1527696000.0 and velocity_data44.mintime>=1527693698 and velocity_data4.mintime<1527694298 and velocity_data4.iccao24='484506' and rawmsg is not null ;
+select mintime, maxtime, rawmsg, msgcount, icao24, hour from v
+velocity_data4  where hour>=1527692400.0 and hour<1527696000.0 and velocity_data4
+4.mintime>=1527693698 and velocity_data4.mintime<1527694298 and velocity_data4.ic
+cao24='484506' and rawmsg is not null ;
 1527693782.294	1527693782.324	8d48450699007119c0b704d0917f	1	484506	1527692400
 1527694179.151	1527694179.16	8d48450699000aa360050dfc3b15	1	484506	1527692400
 1527694179.171	1527694179.191	8d48450699000aa360050dfc3b15	1	484506	1527692400
@@ -1279,4 +1282,4 @@ select mintime, maxtime, rawmsg, msgcount, icao24, hour from vvelocity_data4  w
 1527694052.339	1527694052.873	8d484506990075a1280a0d97f3d3	2	484506	1527692400
 1527694052.932	1527694052.965	8d484506990075a1280a0d97f3d3	1	484506	1527692400
 1527694053.552	1527694053.587	8d484506990075a1280a0d97f3d3	2	484506	1527692400
-[hadoop-1:21000] > 
+[hadoop-1:21000] >

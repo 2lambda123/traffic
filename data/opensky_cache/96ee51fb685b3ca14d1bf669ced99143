@@ -1,5 +1,11 @@
 count	time	icao24	lat	lon	velocity	heading	vertrate	callsign	onground	alert	spi	squawk	baroaltitude	geoaltitude	lastposupdate	lastcontact	hour
-select count(*) as count, time, icao24, lat, lon, velocity, hheading, vertrate, callsign, onground, alert, spi, squawk, baroaltitude, geoaltittude, lastposupdate, lastcontact, hour from state_vectors_data4 , state_vectors_ddata4.serials s  where hour>=1528732800.0 and hour<1528736400.0 and time>=15287299200.0 and time<1528736400.0 and callsign='KLM1308 ' group by time, icao24, lat,  lon, velocity, heading, vertrate, callsign, onground, alert, spi, squawk, baroalltitude, geoaltitude, lastposupdate, lastcontact, hour ;
+select count(*) as count, time, icao24, lat, lon, velocity, h
+heading, vertrate, callsign, onground, alert, spi, squawk, baroaltitude, geoaltit
+tude, lastposupdate, lastcontact, hour from state_vectors_data4 , state_vectors_d
+data4.serials s  where hour>=1528732800.0 and hour<1528736400.0 and time>=1528729
+9200.0 and time<1528736400.0 and callsign='KLM1308 ' group by time, icao24, lat,
+ lon, velocity, heading, vertrate, callsign, onground, alert, spi, squawk, baroal
+ltitude, geoaltitude, lastposupdate, lastcontact, hour ;
 27	1528734957	484cb8	51.29153494107521	3.508987426757812	214.5256153431251	29.7619234676214	-8.77824	KLM1308 	false	false	false	1000	6781.8	6941.820000000001	1528734956.176	1528734956.99	1528732800
 4	1528733458	484cb8	48.19148176807468	1.593017578125	246.9165071870068	16.58490437477606	-0.32512	KLM1308 	false	false	false	1000	10363.2	10576.56	1528733457.904	1528733457.981	1528732800
 32	1528734857	484cb8	51.1072998046875	3.362113334037162	251.6930085064463	26.46030581019877	-8.77824	KLM1308 	false	false	false	1000	7482.84	7658.1	1528734856.811	1528734857	1528732800
@@ -3203,4 +3209,4 @@ select count(*) as count, time, icao24, lat, lon, velocity, hheading, vertrate,
 6	1528733340	484cb8	47.93656171378443	1.482379619891827	252.059711310957	15.99358409772995	-0.32512	KLM1308 	false	false	false	1000	10363.2	10568.94	1528733339.516	1528733339.963	1528732800
 29	1528734950	484cb8	51.27701064287606	3.497238159179688	215.5821147557769	27.1153672479933	-10.72896	KLM1308 	false	false	false	1000	6850.38	7002.78	1528734947.584	1528734949.997	1528732800
 28	1528734596	484cb8	50.55908203125	2.933498073268581	260.6733993739763	26.10993099169302	-0.32512	KLM1308 	false	false	false	1000	8534.4	8724.9	1528734595.993	1528734595.999	1528732800
-[hadoop-29:21000] > 
+[hadoop-29:21000] >

@@ -193,9 +193,9 @@ def __getattr__(name: str) -> Any:
         AIXMAirportParser.cache_dir = cache_dir
         res = AIXMAirportParser(
             data=None,
-            aixm_path=Path(aixm_path_str)
-            if aixm_path_str is not None
-            else None,
+            aixm_path=(
+                Path(aixm_path_str) if aixm_path_str is not None else None
+            ),
         )
         _cached_imports[name] = res
         return res
@@ -206,9 +206,9 @@ def __getattr__(name: str) -> Any:
         AIXMAirspaceParser.cache_dir = cache_dir
         res = AIXMAirspaceParser(
             data=None,
-            aixm_path=Path(aixm_path_str)
-            if aixm_path_str is not None
-            else None,
+            aixm_path=(
+                Path(aixm_path_str) if aixm_path_str is not None else None
+            ),
         )
         _cached_imports[name] = res
         return res

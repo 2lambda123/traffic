@@ -5,7 +5,7 @@ Following the invasion of Ukraine, most European countries banned Russian
 aircraft from flying their airspace.  This raised the question of Kaliningrad
 exclave being isolated from the rest of the country. It seems that after
 February 27, commercial flights between mainland Russia and Kaliningrad have
-been flying on the thin border between Finland, Sweden and Baltic states 
+been flying on the thin border between Finland, Sweden and Baltic states
 :ref:`Flight Information Regions (FIR) <How to access airspace information?>`.
 
 Actually, operations are almost in a "business as usual" situation:

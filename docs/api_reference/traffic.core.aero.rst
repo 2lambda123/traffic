@@ -6,4 +6,3 @@ traffic.core.aero
     :inherited-members:
     :no-undoc-members:
     :show-inheritance:
-
