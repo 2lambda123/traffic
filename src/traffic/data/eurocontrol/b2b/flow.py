@@ -195,44 +195,52 @@ class RegulationList(DataFrameMixin, B2BReply):
                         if p.text is not None
                     },
                     **{
-                        "start": elt.find(  # type: ignore
-                            "applicability/wef"
-                        ).text
-                        if elt.find("applicability") is not None
-                        else None,
-                        "stop": elt.find(  # type: ignore
-                            "applicability/unt"
-                        ).text
-                        if elt.find("applicability") is not None
-                        else None,
+                        "start": (
+                            elt.find("applicability/wef").text  # type: ignore
+                            if elt.find("applicability") is not None
+                            else None
+                        ),
+                        "stop": (
+                            elt.find("applicability/unt").text  # type: ignore
+                            if elt.find("applicability") is not None
+                            else None
+                        ),
                     },
                     **{
-                        "airspace": elt.find(  # type: ignore
-                            refloc + "ReferenceLocationAirspace/id"
-                        ).text
-                        if elt.find(refloc + "ReferenceLocationAirspace")
-                        is not None
-                        else None,
-                        "aerodrome": elt.find(  # type: ignore
-                            refloc + "ReferenceLocationAerodrome/id"
-                        ).text
-                        if elt.find(refloc + "ReferenceLocationAerodrome")
-                        is not None
-                        else None,
+                        "airspace": (
+                            elt.find(  # type: ignore
+                                refloc + "ReferenceLocationAirspace/id"
+                            ).text
+                            if elt.find(refloc + "ReferenceLocationAirspace")
+                            is not None
+                            else None
+                        ),
+                        "aerodrome": (
+                            elt.find(  # type: ignore
+                                refloc + "ReferenceLocationAerodrome/id"
+                            ).text
+                            if elt.find(refloc + "ReferenceLocationAerodrome")
+                            is not None
+                            else None
+                        ),
                     },
                     **{
-                        "fl_min": elt.find(  # type: ignore
-                            "location/flightLevels/min/level"
-                        ).text
-                        if elt.find("location/flightLevels/min/level")
-                        is not None
-                        else 0,
-                        "fl_max": elt.find(  # type: ignore
-                            "location/flightLevels/max/level"
-                        ).text
-                        if elt.find("location/flightLevels/max/level")
-                        is not None
-                        else 999,
+                        "fl_min": (
+                            elt.find(  # type: ignore
+                                "location/flightLevels/min/level"
+                            ).text
+                            if elt.find("location/flightLevels/min/level")
+                            is not None
+                            else 0
+                        ),
+                        "fl_max": (
+                            elt.find(  # type: ignore
+                                "location/flightLevels/max/level"
+                            ).text
+                            if elt.find("location/flightLevels/max/level")
+                            is not None
+                            else 999
+                        ),
                     },
                 }
                 for elt in self.reply.findall("data/regulations/item")
@@ -329,21 +337,26 @@ class Measures:
                 + "</requestedRegulationFields>"
             ),
             tvs=(
-                "<tvs>"
-                + "\n".join(f"<item>{tv}</item>" for tv in _tvs)
-                + "</tvs>"
-            )
-            if traffic_volumes is not None
-            else "",
-            regulations=(
-                "<regulations>"
-                + "\n".join(
-                    f"<item>{regulation}</item>" for regulation in _regulations
+                (
+                    "<tvs>"
+                    + "\n".join(f"<item>{tv}</item>" for tv in _tvs)
+                    + "</tvs>"
                 )
-                + "</regulations>"
-            )
-            if regulations is not None
-            else "",
+                if traffic_volumes is not None
+                else ""
+            ),
+            regulations=(
+                (
+                    "<regulations>"
+                    + "\n".join(
+                        f"<item>{regulation}</item>"
+                        for regulation in _regulations
+                    )
+                    + "</regulations>"
+                )
+                if regulations is not None
+                else ""
+            ),
         )
         rep = self.post(data)  # type: ignore
         return RegulationList.fromB2BReply(rep)

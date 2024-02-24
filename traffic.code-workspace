@@ -14,14 +14,14 @@
 
     "[python]": {
       "editor.codeActionsOnSave": {
-        "source.organizeImports": true
-      }
+        "source.organizeImports": true,
+      },
     },
     "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
     "[jsonc]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
 
     // Testing
@@ -46,15 +46,15 @@
       "build/": true,
       "dist/": true,
       "docs/_build": true,
-      "docs/node_modules": true
-    }
+      "docs/node_modules": true,
+    },
   },
   "extensions": {
     "recommendations": [
       "ms-python.python",
       "charliermarsh.ruff",
       "valentjn.vscode-ltex",
-      "ritwickdey.LiveServer"
-    ]
-  }
+      "ritwickdey.LiveServer",
+    ],
+  },
 }

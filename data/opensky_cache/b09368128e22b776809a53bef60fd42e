@@ -1,5 +1,9 @@
 time	icao24	lat	lon	velocity	heading	vertrate	callsign	onground	alert	spi	squawk	baroaltitude	geoaltitude	lastposupdate	lastcontact	hour
-select time, icao24, lat, lon, velocity, heading, vertrate, ccallsign, onground, alert, spi, squawk, baroaltitude, geoaltitude, lastposupdate,, lastcontact, hour from state_vectors_data4 , state_vectors_data4.serials s  wheere hour>=1629763200.0 and hour<1629766800.0 and time>=1629763200.0 and time<16299763800.0 and s.ITEM in (-1408232560, -1408232534) ;
+select time, icao24, lat, lon, velocity, heading, vertrate, c
+callsign, onground, alert, spi, squawk, baroaltitude, geoaltitude, lastposupdate,
+, lastcontact, hour from state_vectors_data4 , state_vectors_data4.serials s  whe
+ere hour>=1629763200.0 and hour<1629766800.0 and time>=1629763200.0 and time<1629
+9763800.0 and s.ITEM in (-1408232560, -1408232534) ;
 1629763205	4afb74	59.65695190429688	17.9520263671875	NULL	NULL	NULL	396     	true	false	false	NULL	NULL	NULL	1629763204.927	1629763204.927	1629763200
 1629763206	4afb74	59.65690612792969	17.95204925537109	NULL	NULL	NULL	396     	true	false	false	NULL	NULL	NULL	1629763205.958	1629763205.958	1629763200
 1629763206	4afb74	59.65690612792969	17.95204925537109	NULL	NULL	NULL	396     	true	false	false	NULL	NULL	NULL	1629763205.958	1629763205.958	1629763200
@@ -9568,4 +9572,4 @@ select time, icao24, lat, lon, velocity, heading, vertrate, ccallsign, onground
 1629763798	4afa25	NULL	NULL	NULL	NULL	NULL	TEST1234	false	false	false	7157	3177.54	NULL	NULL	1629763797.808	1629763200
 1629763799	4afa25	NULL	NULL	NULL	NULL	NULL	TEST1234	false	false	false	7157	3177.54	NULL	NULL	1629763798.906	1629763200
 1629763799	4afa25	NULL	NULL	NULL	NULL	NULL	TEST1234	false	false	false	7157	3177.54	NULL	NULL	1629763798.906	1629763200
-[hadoop-29:21000] > 
+[hadoop-29:21000] >

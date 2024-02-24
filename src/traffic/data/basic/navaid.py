@@ -18,7 +18,6 @@ base_url = __github_url + "xoolive/traffic/master/data/navdata"
 
 
 class Navaids(GeoDBMixin):
-
     """
     `VOR <https://en.wikipedia.org/wiki/VHF_omnidirectional_range>`_, `DME
     <https://en.wikipedia.org/wiki/Distance_measuring_equipment>`_ and `NDB
@@ -176,15 +175,21 @@ class Navaids(GeoDBMixin):
                     wptype,
                     float(fields[1]),
                     float(fields[2]),
-                    float(fields[3][1:])
-                    if fields[3].startswith("0-")
-                    else float(fields[3]),
-                    float(fields[4])
-                    if wptype == "NDB"
-                    else float(fields[4]) / 100,
-                    float(fields[6])
-                    if wptype in ["VOR", "NDB", "ILS", "GS"]
-                    else None,
+                    (
+                        float(fields[3][1:])
+                        if fields[3].startswith("0-")
+                        else float(fields[3])
+                    ),
+                    (
+                        float(fields[4])
+                        if wptype == "NDB"
+                        else float(fields[4]) / 100
+                    ),
+                    (
+                        float(fields[6])
+                        if wptype in ["VOR", "NDB", "ILS", "GS"]
+                        else None
+                    ),
                     description,
                 )
             )

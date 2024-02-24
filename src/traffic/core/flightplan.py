@@ -313,12 +313,16 @@ class FlightPlan(ShapelyMixin):
             "<h4><b>FlightPlan{from_}{to_}</b></h4>"
             "<div style='max-width: 600px'><code>"
         ).format(
-            from_=f" from {airports[self.origin]}"
-            if self.origin is not None
-            else "",
-            to_=f" to {airports[self.destination]}"
-            if self.destination is not None
-            else "",
+            from_=(
+                f" from {airports[self.origin]}"
+                if self.origin is not None
+                else ""
+            ),
+            to_=(
+                f" to {airports[self.destination]}"
+                if self.destination is not None
+                else ""
+            ),
         )
         title += " ".join(re.sub(r"\s+", " ", self.repr).strip().split())
         title += "</code></div>"

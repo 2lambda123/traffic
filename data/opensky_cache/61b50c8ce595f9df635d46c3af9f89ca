@@ -1,5 +1,9 @@
 mintime	maxtime	rawmsg	msgcount	icao24	message	altitude	identity	hour
-select mintime, maxtime, rawmsg, msgcount, icao24, message, alltitude, identity, hour from rollcall_replies_data4  where hour>=1533150000.0 andd hour<1533153600.0 and rollcall_replies_data4.mintime>=1533151020 and rollcall_rreplies_data4.mintime<1533152679 and rollcall_replies_data4.icao24='495288' and mmessage is not null ;
+select mintime, maxtime, rawmsg, msgcount, icao24, message, al
+ltitude, identity, hour from rollcall_replies_data4  where hour>=1533150000.0 and
+d hour<1533153600.0 and rollcall_replies_data4.mintime>=1533151020 and rollcall_r
+replies_data4.mintime<1533152679 and rollcall_replies_data4.icao24='495288' and m
+message is not null ;
 1533152361.285	1533152361.451	a8000f33803b1f34bffcdc20f883	2	495288	803b1f34bffcdc	NULL	3565	1533150000
 1533151159.024	1533151159.12	a0001718d869f52f600c02c4869a	1	495288	d869f52f600c02	10972.8	NULL	1533150000
 1533152232.227	1533152232.661	a8000f3380bb2133e00cda62432e	2	495288	80bb2133e00cda	NULL	3565	1533150000
@@ -11007,4 +11011,4 @@ select mintime, maxtime, rawmsg, msgcount, icao24, message, alltitude, identity
 1533151548.112	1533151548.472	a00017b1daa9ed2fbfe7ff9cbd25	3	495288	daa9ed2fbfe7ff	11285.22	NULL	1533150000
 1533151905.283	1533151905.441	a00017b1d7c9f530bfbc02deb571	1	495288	d7c9f530bfbc02	11285.22	NULL	1533150000
 1533152185.495	1533152185.775	a00017b0d7a9e52f2024045ec6a9	1	495288	d7a9e52f202404	11277.6	NULL	1533150000
-[hadoop-1:21000] > 
+[hadoop-1:21000] >

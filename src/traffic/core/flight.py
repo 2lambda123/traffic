@@ -1339,12 +1339,10 @@ class Flight(
             yield from after.sliding_windows(duration_, step_)
 
     @overload
-    def split(self, value: int, unit: str) -> FlightIterator:
-        ...
+    def split(self, value: int, unit: str) -> FlightIterator: ...
 
     @overload
-    def split(self, value: str, unit: None = None) -> FlightIterator:
-        ...
+    def split(self, value: str, unit: None = None) -> FlightIterator: ...
 
     @flight_iterator
     def split(
@@ -1505,9 +1503,11 @@ class Flight(
         kwargs_modified: Dict["str", List[Any]] = dict(
             (
                 key,
-                list(value)
-                if any(isinstance(value, x) for x in [list, tuple])
-                else [value],
+                (
+                    list(value)
+                    if any(isinstance(value, x) for x in [list, tuple])
+                    else [value]
+                ),
             )
             for key, value in kwargs.items()
         )
@@ -2083,22 +2083,19 @@ class Flight(
     @overload
     def distance(  # type: ignore
         self, other: None = None, column_name: str = "distance"
-    ) -> float:
-        ...
+    ) -> float: ...
 
     @overload
     def distance(
         self,
         other: Union["Airspace", Polygon, PointMixin],
         column_name: str = "distance",
-    ) -> "Flight":
-        ...
+    ) -> "Flight": ...
 
     @overload
     def distance(
         self, other: "Flight", column_name: str = "distance"
-    ) -> Optional[pd.DataFrame]:
-        ...
+    ) -> Optional[pd.DataFrame]: ...
 
     def distance(
         self,

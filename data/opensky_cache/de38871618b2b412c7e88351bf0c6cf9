@@ -1,5 +1,8 @@
 mintime	maxtime	rawmsg	msgcount	icao24	hour
-select mintime, maxtime, rawmsg, msgcount, icao24, hour from iidentification_data4  where hour>=1527692400.0 and hour<1527696000.0 and identifiication_data4.mintime>=1527693698 and identification_data4.mintime<1527694298 andd identification_data4.icao24='484506' and rawmsg is not null ;
+select mintime, maxtime, rawmsg, msgcount, icao24, hour from i
+identification_data4  where hour>=1527692400.0 and hour<1527696000.0 and identifi
+ication_data4.mintime>=1527693698 and identification_data4.mintime<1527694298 and
+d identification_data4.icao24='484506' and rawmsg is not null ;
 1527693701.408	1527693701.431	8d48450620512070d71820129ed0	1	484506	1527692400
 1527693706.427	1527693706.427	8d48450620512070d71820129ed0	1	484506	1527692400
 1527693711.707	1527693711.707	8d48450620512070d71820129ed0	1	484506	1527692400
@@ -135,4 +138,4 @@ select mintime, maxtime, rawmsg, msgcount, icao24, hour from iidentification_da
 1527693742.042	1527693742.064	8f48450620512070d71820a27c20	1	484506	1527692400
 1527694087.982	1527694087.982	8d48450620512070d79820129ed0	1	484506	1527692400
 1527694017.197	1527694017.197	8d48450620512070d71822129ed0	1	484506	1527692400
-[hadoop-1:21000] > 
+[hadoop-1:21000] >

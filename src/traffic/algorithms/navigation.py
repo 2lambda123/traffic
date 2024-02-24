@@ -681,9 +681,9 @@ class NavigationFeatures:
                 ] = second.max("ILS")
 
                 yield candidate.assign(
-                    airport=airport
-                    if isinstance(airport, str)
-                    else airport.icao
+                    airport=(
+                        airport if isinstance(airport, str) else airport.icao
+                    )
                 )
 
             first = second
@@ -752,9 +752,9 @@ class NavigationFeatures:
 
                 goaround = goaround.assign(
                     ILS=None,
-                    airport=airport
-                    if isinstance(airport, str)
-                    else airport.icao,
+                    airport=(
+                        airport if isinstance(airport, str) else airport.icao
+                    ),
                 )
                 goaround.data.loc[
                     goaround.data.timestamp <= first_attempt.stop, "ILS"

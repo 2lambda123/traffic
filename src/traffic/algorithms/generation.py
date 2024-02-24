@@ -24,25 +24,21 @@ if TYPE_CHECKING:
 class ScalerProtocol(Protocol):
     def fit_transform(
         self, X: npt.NDArray[np.float_]
-    ) -> npt.NDArray[np.float_]:
-        ...
+    ) -> npt.NDArray[np.float_]: ...
 
     def inverse_transform(
         self, X: npt.NDArray[np.float_]
-    ) -> npt.NDArray[np.float_]:
-        ...
+    ) -> npt.NDArray[np.float_]: ...
 
 
 class GenerationProtocol(Protocol):
     def fit(
         self, X: npt.NDArray[np.float_], **kwargs: Any
-    ) -> "GenerationProtocol":
-        ...
+    ) -> "GenerationProtocol": ...
 
     def sample(
         self, n_samples: int
-    ) -> Tuple[npt.NDArray[np.float_], npt.NDArray[np.float_]]:
-        ...
+    ) -> Tuple[npt.NDArray[np.float_], npt.NDArray[np.float_]]: ...
 
 
 class Coordinates(TypedDict):

@@ -234,9 +234,11 @@ class AIXMAirspaceParser(Airspaces):
                         yield {
                             "name": name_.text if name_ is not None else None,
                             "type": type_.text if type_ is not None else None,
-                            "designator": designator_.text
-                            if designator_ is not None
-                            else None,
+                            "designator": (
+                                designator_.text
+                                if designator_ is not None
+                                else None
+                            ),
                             "identifier": identifier.text,
                             "geometry": polygon,
                         }
@@ -254,9 +256,11 @@ class AIXMAirspaceParser(Airspaces):
                         yield {
                             "name": name_.text if name_ is not None else None,
                             "type": type_.text if type_ is not None else None,
-                            "designator": designator_.text
-                            if designator_ is not None
-                            else None,
+                            "designator": (
+                                designator_.text
+                                if designator_ is not None
+                                else None
+                            ),
                             "upper": upper,
                             "lower": lower,
                             "identifier": identifier.text,

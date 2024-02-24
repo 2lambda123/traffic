@@ -1,5 +1,10 @@
 time	icao24	lat	lon	velocity	heading	vertrate	callsign	onground	alert	spi	squawk	baroaltitude	geoaltitude	lastposupdate	lastcontact	hour
-select time, icao24, lat, lon, velocity, heading, vertrate, ccallsign, onground, alert, spi, squawk, baroaltitude, geoaltitude, lastposupdate,, lastcontact, hour from state_vectors_data4 , state_vectors_data4.serials s  wheere hour>=1629795600.0 and hour<1629799200.0 and time>=1629795600.0 and time<16299796200.0 and s.ITEM in (-1408232560, -1408232534) and lon>=17.8936 and lon<=17.99894 and lat>=59.6118 and lat<=59.6716 ;
+select time, icao24, lat, lon, velocity, heading, vertrate, c
+callsign, onground, alert, spi, squawk, baroaltitude, geoaltitude, lastposupdate,
+, lastcontact, hour from state_vectors_data4 , state_vectors_data4.serials s  whe
+ere hour>=1629795600.0 and hour<1629799200.0 and time>=1629795600.0 and time<1629
+9796200.0 and s.ITEM in (-1408232560, -1408232534) and lon>=17.8936 and lon<=17.9
+9894 and lat>=59.6118 and lat<=59.6716 ;
 1629796052	4afb04	59.65944671630859	17.94117736816406	NULL	NULL	NULL	ELJEEP  	true	false	false	NULL	NULL	NULL	1629796051.871	1629796051.871	1629795600
 1629796052	4afb04	59.65944671630859	17.94117736816406	NULL	NULL	NULL	ELJEEP  	true	false	false	NULL	NULL	NULL	1629796051.871	1629796051.871	1629795600
 1629796053	4afb04	59.65945098359706	17.94117105418238	NULL	NULL	NULL	ELJEEP  	true	false	false	NULL	NULL	NULL	1629796052.99	1629796052.99	1629795600
@@ -5706,4 +5711,4 @@ select time, icao24, lat, lon, velocity, heading, vertrate, ccallsign, onground
 1629795682	4afbb3	59.65515653965836	17.94408337823276	NULL	NULL	NULL	SWK7    	true	false	false	NULL	NULL	NULL	1629795669.775	1629795669.775	1629795600
 1629795683	4afbb3	59.65515653965836	17.94408337823276	NULL	NULL	NULL	SWK7    	true	false	false	NULL	NULL	NULL	1629795669.775	1629795669.775	1629795600
 1629795684	4afbb3	59.65515653965836	17.94408337823276	NULL	NULL	NULL	SWK7    	true	false	false	NULL	NULL	NULL	1629795669.775	1629795669.775	1629795600
-[hadoop-29:21000] > 
+[hadoop-29:21000] >

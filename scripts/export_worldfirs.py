@@ -38,9 +38,9 @@ aixm_airspaces.data.loc[
 ] = ["CANARIAS UIR", "UIR", "GCCC"]
 
 for name in ["VCCF", "UTSD", "UTTR", "UHPP"]:
-    aixm_airspaces.data.loc[
-        aixm_airspaces.data.designator == name, "upper"
-    ] = np.inf
+    aixm_airspaces.data.loc[aixm_airspaces.data.designator == name, "upper"] = (
+        np.inf
+    )
 
 # %%
 

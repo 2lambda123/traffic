@@ -1,5 +1,19 @@
 count	time	icao24	lat	lon	velocity	heading	vertrate	callsign	onground	alert	spi	squawk	baroaltitude	geoaltitude	lastposupdate	lastcontact	hour	firstseen	origin	lastseen	destination	day
-select count(*) as count, time, icao24, lat, lon, velocity, hheading, vertrate, callsign, onground, alert, spi, squawk, baroaltitude, geoaltittude, lastposupdate, lastcontact, hour, est.firstseen, est.estdepartureairport, eest.lastseen, est.estarrivalairport, est.day from state_vectors_data4 , state_vecctors_data4.serials s join (select icao24 as e_icao24, firstseen, estdepartureairrport, lastseen, estarrivalairport, callsign as e_callsign, day from flights_dataa4 where estdepartureairport ='ESSA' and (1629763200 <= day and day <= 16298496000)) as est on icao24 = est.e_icao24 and callsign = est.e_callsign and est.firstseeen - 0 <= time and time <= est.lastseen + 0 where hour>=1629795600.0 and hour<16629799200.0 and time>=1629798300.0 and time<1629798600.0 and s.ITEM in (-14082325560, -1408232534) and lon>=17.8936 and lon<=17.9894 and lat>=59.6118 and lat<=59..6716 group by time, icao24, lat, lon, velocity, heading, vertrate, callsign, ongground, alert, spi, squawk, baroaltitude, geoaltitude, lastposupdate, lastcontactt, hour, est.firstseen, est.estdepartureairport, est.lastseen, est.estarrivalairpport, est.day ;
+select count(*) as count, time, icao24, lat, lon, velocity, h
+heading, vertrate, callsign, onground, alert, spi, squawk, baroaltitude, geoaltit
+tude, lastposupdate, lastcontact, hour, est.firstseen, est.estdepartureairport, e
+est.lastseen, est.estarrivalairport, est.day from state_vectors_data4 , state_vec
+ctors_data4.serials s join (select icao24 as e_icao24, firstseen, estdepartureair
+rport, lastseen, estarrivalairport, callsign as e_callsign, day from flights_data
+a4 where estdepartureairport ='ESSA' and (1629763200 <= day and day <= 1629849600
+0)) as est on icao24 = est.e_icao24 and callsign = est.e_callsign and est.firstse
+een - 0 <= time and time <= est.lastseen + 0 where hour>=1629795600.0 and hour<16
+629799200.0 and time>=1629798300.0 and time<1629798600.0 and s.ITEM in (-14082325
+560, -1408232534) and lon>=17.8936 and lon<=17.9894 and lat>=59.6118 and lat<=59.
+.6716 group by time, icao24, lat, lon, velocity, heading, vertrate, callsign, ong
+ground, alert, spi, squawk, baroaltitude, geoaltitude, lastposupdate, lastcontact
+t, hour, est.firstseen, est.estdepartureairport, est.lastseen, est.estarrivalairp
+port, est.day ;
 2	1629798326	4ac9e5	59.64710300251588	17.91680697737069	68.007862389438	10.45990909292913	0.65024	SAS69E  	false	false	false	NULL	-99.06	60.96000000000001	1629798325.512	1629798325.806	1629795600	1629798317	ESSA	1629801686	NULL	1629763200
 2	1629798321	4ac9e5	59.64435642048463	17.91576517039332	57.51658773084509	10.30484646876603	0.32512	SAS69E  	false	false	false	NULL	-83.82000000000001	60.95999999999999	1629798320.847	1629798320.847	1629795600	1629798317	ESSA	1629801686	NULL	1629763200
 2	1629798358	4ac9e5	59.66862487792969	17.92437744140625	78.91309373969621	10.13780385308514	10.40384	SAS69E  	false	false	false	NULL	289.56	434.34	1629798357.666	1629798357.973	1629795600	1629798317	ESSA	1629801686	NULL	1629763200
@@ -45,4 +59,4 @@ select count(*) as count, time, icao24, lat, lon, velocity, hheading, vertrate,
 2	1629798361	4ac9e5	59.67089119604078	17.92514143318965	80.85285766309275	9.522255009925217	10.40384	SAS69E  	false	false	false	NULL	327.66	472.4400000000001	1629798360.833	1629798360.98	1629795600	1629798317	ESSA	1629801686	NULL	1629763200
 2	1629798336	4ac9e5	59.65406799316406	17.91925048828125	75.78407949484071	10.16569487954269	13.0048	SAS69E  	false	false	false	NULL	-7.62	129.54	1629798335.951	1629798335.951	1629795600	1629798317	ESSA	1629801686	NULL	1629763200
 2	1629798331	4ac9e5	59.65058898925781	17.91806030273438	70.12496347219025	10.56801420900933	1.30048	SAS69E  	false	false	false	NULL	-68.58	60.96000000000001	1629798330.798	1629798330.798	1629795600	1629798317	ESSA	1629801686	NULL	1629763200
-[hadoop-29:21000] > 
+[hadoop-29:21000] >

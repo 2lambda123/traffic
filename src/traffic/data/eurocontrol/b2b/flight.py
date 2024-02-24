@@ -402,9 +402,11 @@ class FlightInfo(B2BReply):
             .rename(columns={"timeOver": "timestamp"})
             .assign(
                 flightPlanPoint=lambda x: x.flightPlanPoint == "true",
-                icao24=self.aircraftAddress.lower()
-                if hasattr(self, "aircraftAddress")
-                else None,
+                icao24=(
+                    self.aircraftAddress.lower()
+                    if hasattr(self, "aircraftAddress")
+                    else None
+                ),
                 callsign=self.aircraftId,
                 origin=self.aerodromeOfDeparture,
                 destination=self.aerodromeOfDestination,
@@ -472,9 +474,11 @@ class FlightList(DataFrameMixin, B2BReply):
             [
                 {
                     **{
-                        "flightId": elt.find("flightId/id").text  # type: ignore
-                        if elt.find("flightId/id") is not None
-                        else None
+                        "flightId": (
+                            elt.find("flightId/id").text  # type: ignore
+                            if elt.find("flightId/id") is not None
+                            else None
+                        )
                     },
                     **{
                         p.tag: p.text
@@ -531,14 +535,16 @@ class FlightList(DataFrameMixin, B2BReply):
                 self.data = self.data.assign(
                     **{
                         feat: self.data[feat].apply(
-                            lambda x: pd.Timedelta(
-                                f"{x[:2]} hours {x[2:4]} minutes "
-                                + f"{x[4:6]} seconds"
-                                if feat == "currentlyUsedTaxiTime"
-                                else ""
+                            lambda x: (
+                                pd.Timedelta(
+                                    f"{x[:2]} hours {x[2:4]} minutes "
+                                    + f"{x[4:6]} seconds"
+                                    if feat == "currentlyUsedTaxiTime"
+                                    else ""
+                                )
+                                if x == x
+                                else pd.Timedelta("0")
                             )
-                            if x == x
-                            else pd.Timedelta("0")
                         )
                     }
                 )
@@ -567,9 +573,11 @@ class FlightPlanList(FlightList):
             [
                 {
                     **{
-                        "flightId": elt.find("id/id").text  # type: ignore
-                        if elt.find("id/id") is not None
-                        else None
+                        "flightId": (
+                            elt.find("id/id").text  # type: ignore
+                            if elt.find("id/id") is not None
+                            else None
+                        )
                     },
                     **{
                         p.tag: p.text

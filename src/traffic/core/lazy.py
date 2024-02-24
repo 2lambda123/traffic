@@ -102,9 +102,9 @@ def apply(
     """
     return functools.reduce(
         (
-            lambda next_step, fun: fun(idx, next_step)
-            if next_step is not None
-            else None
+            lambda next_step, fun: (
+                fun(idx, next_step) if next_step is not None else None
+            )
         ),
         stacked_ops,
         flight,
@@ -282,15 +282,13 @@ class LazyTraffic:
 @overload
 def lazy_evaluation(
     default: "Literal[None, False]" = False, idx_name: Optional[str] = None
-) -> Callable[..., Callable[..., LazyTraffic]]:
-    ...
+) -> Callable[..., Callable[..., LazyTraffic]]: ...
 
 
 @overload
 def lazy_evaluation(
     default: "Literal[True]", idx_name: Optional[str] = None
-) -> Callable[..., Callable[..., "Traffic"]]:
-    ...
+) -> Callable[..., Callable[..., "Traffic"]]: ...
 
 
 def lazy_evaluation(
@@ -373,9 +371,11 @@ feature is experimental.
             if any(is_lambda(arg) for arg in args):
                 _log.warning(msg.format(method=f.__name__))
                 args = tuple(
-                    stringify_lambda(arg)
-                    if not isinstance(arg, str) and is_lambda(arg)
-                    else arg
+                    (
+                        stringify_lambda(arg)
+                        if not isinstance(arg, str) and is_lambda(arg)
+                        else arg
+                    )
                     for arg in args
                 )
             if any(is_lambda(arg) for arg in kwargs.values()):
@@ -383,9 +383,11 @@ feature is experimental.
                 kwargs = dict(
                     (
                         key,
-                        stringify_lambda(arg)
-                        if not isinstance(arg, str) and is_lambda(arg)
-                        else arg,
+                        (
+                            stringify_lambda(arg)
+                            if not isinstance(arg, str) and is_lambda(arg)
+                            else arg
+                        ),
                     )
                     for key, arg in kwargs.items()
                 )

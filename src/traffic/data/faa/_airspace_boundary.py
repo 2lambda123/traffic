@@ -54,12 +54,16 @@ class Airspace_Boundary(ADDS_FAA_OpenData, Airspaces):
                 elements=[
                     ExtrudedPolygon(
                         orient(shape(feat["geometry"]), -1),
-                        feat["properties"]["LOWER_VAL"]
-                        if feat["properties"]["LOWER_VAL"] != -9998
-                        else 0,
-                        feat["properties"]["UPPER_VAL"]
-                        if feat["properties"]["UPPER_VAL"] != -9998
-                        else float("inf"),
+                        (
+                            feat["properties"]["LOWER_VAL"]
+                            if feat["properties"]["LOWER_VAL"] != -9998
+                            else 0
+                        ),
+                        (
+                            feat["properties"]["UPPER_VAL"]
+                            if feat["properties"]["UPPER_VAL"] != -9998
+                            else float("inf")
+                        ),
                     )
                 ],
                 type_=feat["properties"]["TYPE_CODE"],

@@ -1,5 +1,8 @@
 mintime	maxtime	rawmsg	msgcount	icao24	hour
-select mintime, maxtime, rawmsg, msgcount, icao24, hour from pposition_data4  where hour>=1527692400.0 and hour<1527696000.0 and position_data44.mintime>=1527693698 and position_data4.mintime<1527694298 and position_data4.iccao24='484506' and rawmsg is not null ;
+select mintime, maxtime, rawmsg, msgcount, icao24, hour from p
+position_data4  where hour>=1527692400.0 and hour<1527696000.0 and position_data4
+4.mintime>=1527693698 and position_data4.mintime<1527694298 and position_data4.ic
+cao24='484506' and rawmsg is not null ;
 1527693699.165	1527693699.165	8d484506680732e232f2abda0ee9	1	484506	1527692400
 1527693699.713	1527693699.713	8d4845066807464d6eebed243de2	1	484506	1527692400
 1527693700.162	1527693700.162	8d4845066807464d7aebedce28f6	1	484506	1527692400
@@ -1370,4 +1373,4 @@ select mintime, maxtime, rawmsg, msgcount, icao24, hour from pposition_data4  w
 1527694297.063	1527694297.378	8d484506683d0294e5088153c718	1	484506	1527692400
 1527694297.545	1527694297.626	8d484506683d060141016a793c1d	1	484506	1527692400
 1527694297.962	1527694298.041	8d484506683d060127016965a9f2	1	484506	1527692400
-[hadoop-1:21000] > 
+[hadoop-1:21000] >
