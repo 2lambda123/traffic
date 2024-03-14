@@ -202,4 +202,3 @@ We will select a few subset of airports for visualisation and build a specific t
     ).resolve_scale(color="independent")
 
     result
-
