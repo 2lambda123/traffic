@@ -1339,10 +1339,12 @@ class Flight(
             yield from after.sliding_windows(duration_, step_)
 
     @overload
-    def split(self, value: int, unit: str) -> FlightIterator: ...
+    def split(self, value: int, unit: str) -> FlightIterator:
+        ...
 
     @overload
-    def split(self, value: str, unit: None = None) -> FlightIterator: ...
+    def split(self, value: str, unit: None = None) -> FlightIterator:
+        ...
 
     @flight_iterator
     def split(
@@ -2083,19 +2085,22 @@ class Flight(
     @overload
     def distance(  # type: ignore
         self, other: None = None, column_name: str = "distance"
-    ) -> float: ...
+    ) -> float:
+        ...
 
     @overload
     def distance(
         self,
         other: Union["Airspace", Polygon, PointMixin],
         column_name: str = "distance",
-    ) -> "Flight": ...
+    ) -> "Flight":
+        ...
 
     @overload
     def distance(
         self, other: "Flight", column_name: str = "distance"
-    ) -> Optional[pd.DataFrame]: ...
+    ) -> Optional[pd.DataFrame]:
+        ...
 
     def distance(
         self,

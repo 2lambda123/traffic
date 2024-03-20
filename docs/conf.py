@@ -150,7 +150,6 @@ intersphinx_mapping = {
 
 
 def setup(app: Any) -> None:
-
     # <!-- Import Vega & Vega-Lite -->
     app.add_js_file("https://cdn.jsdelivr.net/npm/vega@5")
     app.add_js_file("https://cdn.jsdelivr.net/npm/vega-lite@4")
